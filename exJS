@@ -83,7 +83,7 @@ let countEtWord = 0;
 let singleWords = longText.split(" ");
 
 for (let i=0; i< singleWords.length; i++) {
-  if (singleWords[i] === "et"){
+    if (singleWords[i] === "et" || singleWords[i] === "et," || singleWords[i] === ",et" || singleWords[i] === "et." || singleWords[i] === ".et" ){
     countEtWord ++
   }
 }
