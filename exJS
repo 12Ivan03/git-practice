@@ -1,0 +1,95 @@
+ // Iteration 1: Names and Input
+
+let hacker1 = "Ivan"; // Create.
+console.log(`The driver's name is ${hacker1}.`); // Print.
+
+let hacker2 = "Intuition" ; // Create.
+console.log(`The navigator's name is ${hacker2}`); // Print.
+
+
+// Iteration 2: Cnditionals 
+
+let text1 = "The driver has the longest name, it has XX characters.";
+let text2 = "It seems that the navigator has the longest name, it has XX characters.";
+let text3 = "Wow, you both have equally long names, XX characters!";
+
+if (hacker1.length > hacker2.length) {
+    console.log(text1);
+} else if (hacker2.length > hacker1.length) {
+    console.log(text2)
+} else {
+    console.log(text3)
+}  // Print the name that is longer.
+
+
+
+// Iteration 3:Loops
+//.1.a
+let capitalHacker1 = "";
+
+for (let i=0; i<hacker1.length; i++) {
+    capitalHacker1 = capitalHacker1 + " " + hacker1[i];
+}
+console.log(capitalHacker1.toUpperCase()) // Print the characters with space and in capital letters.
+
+//.2.a
+let reverseHacker2 = "";
+
+for (let i=hacker2.length-1; i>0; i--) {
+    reverseHacker2 = reverseHacker2 + hacker2[i];
+}
+console.log(reverseHacker2); // Prints the name backwards.
+
+
+//.1.b
+// let capitalHacker1 = hacker1.toUpperCase().split('');
+// console.log(capitalHacker1); // What I did first. Why it's wrong?
+
+// .2.b
+// let reverseHacker2 = hacker2.split('').reverse().join("");
+// console.log(reverseHacker2); // Print the characters in reverse order.
+
+
+ //.3
+if (capitalHacker1 > reverseHacker2) {
+    console.log(`The driver's name goes first: "${capitalHacker1}".`)
+} else if (reverseHacker2 > capitalHacker1) {
+    console.log(`Yo, the navigator goes first, definitely: "${reverseHacker2}".`)
+} else {
+    console.log(`What?! You both have the same name? "${capitalHacker1}" equal to "${reverseHacker2}".`)
+} // Depending on the lexicographical order. 
+
+
+
+
+// Bonus Time!
+
+//1 
+let longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor rhoncus urna vel tempor. Praesent erat dolor, ultrices vitae tellus eget, bibendum porttitor ex. Nulla consectetur ex ac lacus tempor, non ullamcorper magna posuere. Praesent risus libero, volutpat at euismod at, scelerisque id arcu. Donec condimentum a metus eu bibendum. Sed venenatis a enim vel feugiat. Nulla et orci non turpis condimentum congue at non sem. Phasellus nisl ipsum, feugiat luctus lacinia quis, sagittis vitae lacus. Nunc eu placerat nisl, porttitor rutrum est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam aliquam malesuada mauris, in aliquet mi lacinia ultricies. Nulla vehicula dui molestie nibh consectetur blandit. Donec at luctus enim.Morbi ullamcorper, neque vel imperdiet facilisis, erat metus interdum quam, vel fringilla libero urna sed urna. Proin pulvinar diam ac lectus varius, sit amet lobortis mauris rutrum. Quisque varius tempus erat, et imperdiet massa aliquam vel. Phasellus id libero ut purus suscipit auctor ut congue lectus. Fusce vestibulum, sapien id lobortis convallis, massa velit sagittis lorem, sed mollis sem odio in arcu. Nulla aliquam euismod justo in consectetur. Suspendisse laoreet, metus ac scelerisque sagittis, mi mi hendrerit nisl, et porta nunc lacus eu arcu. Quisque pretium efficitur odio in egestas. Vivamus placerat iaculis mauris, vel semper eros aliquam vel. Cras vel lacinia sem, semper faucibus nisl. Pellentesque interdum ante nibh, nec suscipit metus sollicitudin a. Praesent iaculis in leo non dictum.  Nam lacus mi, consectetur eget turpis bibendum, accumsan condimentum dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin sed eros imperdiet, ultricies libero rhoncus, accumsan arcu. Donec porta feugiat posuere. Integer a vestibulum urna. Nullam ultricies tellus vel ipsum condimentum, nec molestie sapien sodales. Sed dapibus purus tellus. Cras dictum, dolor sed blandit iaculis, sem urna laoreet mauris, at scelerisque orci mi ac nunc. Etiam eu nibh ultricies tortor scelerisque finibus."
+
+let splitedText = longText.split("")
+let countWords = 0
+
+for (i=0; i<splitedText.length; i++) {
+    if ( splitedText[i] === " ") {
+        countWords ++;
+    }
+}
+
+console.log(`The number of words in the randomly generated text is: ${countWords} words.`)
+
+
+let countEtWord = 0;
+let singleWords = longText.split(" ");
+
+for (let i=0; i< singleWords.length; i++) {
+  if (singleWords[i] === "et"){
+    countEtWord ++
+  }
+}
+
+if (countEtWord === 1) {
+    console.log(`The word "et" is shown ${countEtWord} time.`);
+} else if (countEtWord > 1) {
+    console.log(`The word "et" shows ${countEtWord} times in the text.`);
+}
